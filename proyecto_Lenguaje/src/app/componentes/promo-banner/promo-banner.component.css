@@ -1,0 +1,29 @@
+.hola{
+    background-color: rgb(249, 249, 249);
+}
+
+.texto {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    animation: moverTexto 10s ease-in-out infinite;
+}
+
+@keyframes moverTexto {
+    0% {
+        transform: translateX(-100%); /* Empieza fuera por la izquierda */
+}
+40% {
+    transform: translateX(0); /* Llega al centro */
+}
+90% {
+     transform: translateX(0); /* Se queda en el centro durante 3 segundos */
+}
+100% {
+    transform: translateX(100%); /* Sale hacia la derecha */
+}
+}
+
+
+
