@@ -1,13 +1,22 @@
 
-
-<div class="card">
-    <div class="card-info" >
-    <img src="assets/img/warhammer-logo.png" alt="Warhammer 40,000" class="logo" />
-    <h2>ASTRA MILITARUM</h2>
-    <p>
+<div class="container my-5">
+    <div class="row g-0 bg-dark text-white rounded-4 shadow-lg overflow-hidden" style="height: 500px ; width: 1400px; ">
+    
+    <!-- Info Section -->
+    <div class="col-md-4 d-flex flex-column justify-content-center p-4">
+        <img src="assets/img/warhammer-logo.png" alt="Warhammer 40,000" class="mb-3" style="width: 250px;" />
+        <h2 class="text-warning">ASTRA MILITARUM</h2>
+        <p>
         Avanza implacable en defensa de la humanidad: los francotiradores Rátidos pseudohumanos se unen al frente para eliminar objetivos prioritarios.
-    </p>
-    <button>EXPLORA LA GAMA</button>
+        </p>
+        <button class="btn btn-warning text-dark fw-bold rounded-pill px-4 py-2 w-auto mt-2">
+        EXPLORA LA GAMA
+        </button>
     </div>
-    <div class="card-image" [ngStyle]="{'background-image': 'url(' + imgFondo + ')'}"></div>
+
+    <!-- Image Section with Angular Binding -->
+    <div class="col-md-8" [ngStyle]="{'background-image': 'url(' + imgFondo + ')', 'background-size': 'cover', 'background-position': 'center'}">
+    </div>
+
+    </div>
 </div>

@@ -1,14 +1,19 @@
-<div class="contenedor">
-
-    <div class="navbar" [ngStyle]="{'background-image': 'url(' + imgFondo + ')'}">
-        <div class="hero">
-            <nav class="navbar">
-                <ul>
-                    <li><a routerLink ="/home" routerLinkActive="activeButton">HOME</a></li>
-                    <li><a routerLink ="/shop" routerLinkActive="activeButton">TIENDA</a></li>
-                    <li><a routerLink ="/shop" routerLinkActive="activeButton">APRENDE A JUGAR</a></li>
-                </ul>
-            </nav>
+<div class="container-fluid p-0">
+    <div class="bg-image" [ngStyle]="{'background-image': 'url(' + imgFondo + ')'}">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+        <div class="container-fluid">
+        <ul class="navbar-nav d-flex flex-row">
+            <li class="nav-item me-3">
+            <a class="nav-link fw-bold text-white" routerLink="/home" routerLinkActive="active">HOME</a>
+            </li>
+            <li class="nav-item me-3">
+            <a class="nav-link fw-bold text-white" routerLink="/shop" routerLinkActive="active">TIENDA</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link fw-bold text-white" routerLink="/shop" routerLinkActive="active">APRENDE A JUGAR</a>
+            </li>
+        </ul>
         </div>
+    </nav>
     </div>
 </div>

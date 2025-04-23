@@ -51,4 +51,11 @@
 
     .activeButton{
         border-bottom: 1px solid aqua;
+    } 
+
+    .bg-image {
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+        height: 45vh; /* o el alto que necesites */
     }
