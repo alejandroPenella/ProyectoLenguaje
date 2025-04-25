@@ -1,6 +1,6 @@
 <div class="container card-container">
-    <div class="row g-4 pt-5 px pr-9px">
-        <div class="col-md-3 d-flex justify-content-center mb-4" *ngFor="let faction of factions">
+    <div class="row g-6 pt-5 px pr-9px">
+      <div class="col-md-3" *ngFor="let faction of factions">
         <div class="card h-100 position-relative overflow-hidden faction-card">
 
         <img [src]="faction.imageUrl" class="card-img-top position-absolute top-0 start-0 w-100 h-100" 
@@ -15,8 +15,8 @@
             <h5 class="card-title">{{ faction.name }}</h5>
             <p class="card-text">{{ faction.description }}</p>
             <button [routerLink]="faction.link" class="btn btn-warning text-dark fw-bold rounded-pill px-3 py-1 mt-3 mx-auto d-block" style="font-size: 20px;  width: 190px;">
-            EXPLORAR
-            </button>
+                EXPLORAR
+                </button>
         </div>
 
         </div>
