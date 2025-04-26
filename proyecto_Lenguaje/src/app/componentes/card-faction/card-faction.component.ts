@@ -18,24 +18,24 @@ export class CardFactionComponent {
       color: '#908229',
     },
     {
-      name: 'Emperors Childen',
-      description: 'Jura lealtad a Shaanesh, el dios del Exceso, y súmate a la búsqueda de la perfección  ',
+      name: 'Emperors Children',
+      description: 'Jura lealtad a Slaanesh, el dios del Exceso, y súmate a la búsqueda de la perfección.',
       imageUrl: '/img/Emperors-Children.jpg',
       link: '/shop',
       color: '#A020F0',
-    
+
     },
     {
-      name: 'Thousan Sons',
-      description: 'Alcanza un pacto con Tzeentch, el Dios del cambio y conviértete en maestro de la hechicería ',
+      name: 'Thousand Sons',
+      description: 'Alcanza un pacto con Tzeentch, el Dios del cambio y conviértete en maestro de la hechicería.',
       imageUrl: '/img/thousand_sons.jpg',
       link: '/shop',
       color: '#79D2E6',
     },
 
     {
-      name: 'Worl Eaters',
-      description: 'Entrégate a Khome, el Dios de la sangre, y lanzate al combate con la furia berserkér de sus enajedados guerreros.',
+      name: 'World Eaters',
+      description: 'Entrégate a Khorne, el Dios de la sangre, y lanzate al combate con la furia berserkér de sus enajedados guerreros.',
       imageUrl: '/img/worl_Eaters.jpg',
       link: '/shop',
       color: '#FF6961',
