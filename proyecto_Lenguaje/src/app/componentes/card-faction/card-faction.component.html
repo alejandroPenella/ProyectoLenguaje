@@ -1,0 +1,27 @@
+<div class="container card-container">
+    <div class="row g-6 pt-5 px pr-9px">
+      <div class="col-md-3" *ngFor="let faction of factions">
+        <div class="card h-100 position-relative overflow-hidden faction-card">
+
+        <img [src]="faction.imageUrl" class="card-img-top position-absolute top-0 start-0 w-100 h-100" 
+            [alt]="faction.name" style="object-fit: cover; z-index: 1;">
+
+        <div class="position-absolute top-0 start-0 w-100 h-100" 
+            [ngStyle]="{'background': 'linear-gradient(to top, ' + faction.color + ' 30%, rgba(0,0,0,0) 70%)'}" 
+            style="z-index: 2;">
+        </div>
+
+        <div class="card-body d-flex flex-column justify-content-end position-relative" style="z-index: 3;">
+            <h5 class="card-title">{{ faction.name }}</h5>
+            <p class="card-text">{{ faction.description }}</p>
+            <button [routerLink]="faction.link" class="btn btn-warning text-dark fw-bold rounded-pill px-3 py-1 mt-3 mx-auto d-block" style="font-size: 20px;  width: 190px;">
+                EXPLORAR
+                </button>
+        </div>
+
+        </div>
+    </div>
+    </div>
+</div>
+
+
