@@ -1,1 +1,40 @@
 <app-top-bar></app-top-bar>
+<div class="topbar">
+  <div class="section chaos" (mouseenter)="showDropdown('chaos')" (mouseleave)="hideDropdown()">
+    CHAOS
+    <ul class="dropdown" *ngIf="activeDropdown === 'chaos'">
+      <li><a href="#">Daemons del Chaos</a></li>
+      <li><a href="#">Caballeros del Chaos</a></li>
+      <li><a href="#">Marines Espaciales del Chaos</a></li>
+      <li><a href="#">Death Guard</a></li>
+      <li><a href="#">Emperors Children</a></li>
+      <li><a href="#">Thousand Sons</a></li>
+      <li><a href="#">World Eaters</a></li>
+    </ul>
+  </div>
+  <div class="section imperium" (mouseenter)="showDropdown('imperium')" (mouseleave)="hideDropdown()">
+    IMPERIUM
+    <ul class="dropdown" *ngIf="activeDropdown === 'imperium'">
+      <li><a href="#">Marines Espaciales</a></li>
+      <li><a href="#">Adepta Sororitas</a></li>
+      <li><a href="#">Adeptus Custodes</a></li>
+      <li><a href="#">Adeptus Mechanicus</a></li>
+      <li><a href="#">Astra Militarum</a></li>
+      <li><a href="#">Caballeros Imperiales</a></li>
+      <li><a href="#">Agentes Imperiales</a></li>
+    </ul>
+  </div>
+  <div class="section xenos" (mouseenter)="showDropdown('xenos')" (mouseleave)="hideDropdown()">
+    XENOS
+    <ul class="dropdown" *ngIf="activeDropdown === 'xenos'">
+      <li><a href="#">Aeldari</a></li>
+      <li><a href="#">Drukhari</a></li>
+      <li><a href="#">Cultos Genestealer</a></li>
+      <li><a href="#">Leagues of Votann</a></li>
+      <li><a href="#">Necrones</a></li>
+      <li><a href="#">Orkos</a></li>
+      <li><a href="#">Imperio Tau</a></li>
+      <li><a href="#">Tiránidos</a></li>
+    </ul>
+  </div>
+</div>

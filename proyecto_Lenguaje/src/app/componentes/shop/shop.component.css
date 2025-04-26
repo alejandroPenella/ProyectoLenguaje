@@ -1,0 +1,57 @@
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 20px 20px;
+  height: 120px;
+}
+
+.section {
+  flex: 1;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  position: relative; /* Required for dropdown positioning */
+}
+
+.section ul.dropdown {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 100%; /* Position the dropdown below the section */
+  left: 0;
+  width: 100%;
+  background-color: #444;
+  z-index: 10;
+}
+
+.section ul.dropdown li {
+  padding: 10px;
+  text-align: center;
+}
+
+.section ul.dropdown li a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  transition: background 0.3s;
+}
+
+.section ul.dropdown li a:hover {
+  background-color: #555;
+}
+
+.chaos {
+  background: linear-gradient(to right, black, transparent); /* Fade effect from black to transparent */
+}
+
+.imperium {
+  background: linear-gradient(to right, transparent, rgb(45, 45, 199), transparent); /* Fade effect from the center to both sides */
+}
+
+.xenos {
+  background: linear-gradient(to left, green, transparent); /* Fade effect from green to transparent, right to left */
+}
