@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-community',
-  imports: [],
+  imports: [RouterLink, RouterLinkActive, RouterOutlet],
   templateUrl: './community.component.html',
   styleUrl: './community.component.css'
 })
