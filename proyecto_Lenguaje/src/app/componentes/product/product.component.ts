@@ -37,6 +37,20 @@ export class ProductComponent implements OnInit {  // El método ngOnInit debe e
       description: 'Enemigos eternos desde el pasado.',
       imageUrl: '/img/patrullaNecrones.jpg',
       price: 125
+    },
+    {
+      id: 4,
+      name: 'Roboute Guilliman',
+      description: 'Primarca de los Ultramarines.',
+      imageUrl: '/img/RobouteGuilliman.jpg',
+      price: 55
+    },
+    {
+      id: 5,
+      name: 'Guardia de Honor de los Ultramarines',
+      description: 'Contiene tres opciones de Élites para tu ejército de Marines Espaciales.',
+      imageUrl: '/img/UltramarineHonorGuard.jpg',
+      price: 125
     }
   ];
 

@@ -50,14 +50,14 @@ export class ShopComponent {
       price: 120
     },
     {
-      id: 2,
+      id: 4,
       name: 'Roboute Guilliman',
       description: 'Primarca de los Ultramarines.',
       imageUrl: '/img/RobouteGuilliman.jpg',
       price: 55
     },
     {
-      id: 3,
+      id: 5,
       name: 'Guardia de Honor de los Ultramarines',
       description: 'Contiene tres opciones de Élites para tu ejército de Marines Espaciales.',
       imageUrl: '/img/UltramarineHonorGuard.jpg',
