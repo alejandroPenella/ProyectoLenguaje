@@ -1,12 +1,53 @@
 <app-top-bar></app-top-bar>
+
 <div class="container mt-5" *ngIf="product">
-    <h2>{{ product.name }}</h2>
-    <img [src]="product.imageUrl" alt="{{ product.name }}" class="img-fluid" style="max-height: 300px;">
+  <div class="row">
+    <!-- Imagen del producto -->
+    <div class="col-md-5 text-center">
+      <img [src]="product.imageUrl" alt="{{ product.name }}" class="img-fluid rounded shadow" style="max-height: 400px;">
+    </div>
+
+    <!-- Información del producto -->
+    <div class="col-md-7">
+      <h2 class="mb-3">{{ product.name }}</h2>
+      
+      <p class="text-muted">{{ product.shortDescription }}</p>
+
+      <h4 class="text-success mt-4">{{ product.price | currency: 'EUR' }}</h4>
+      <p class="text-secondary">Impuestos incluidos</p>
+
+      <div class="d-flex align-items-center mb-3">
+        <span class="badge bg-success me-2">En stock</span>
+        <small>Entrega estimada: 3-5 días</small>
+      </div>
+
+      <button class="btn btn-outline-primary btn-lg ms-2">
+        Añadir al carrito
+      </button>
+
+      <!-- Detalles adicionales -->
+      <div class="mt-5">
+        <h5>Detalles del producto:</h5>
+        <ul class="list-unstyled">
+          <li><strong>Idioma:</strong> {{ product.language }}</li>
+          <li><strong>Editorial:</strong> {{ product.publisher }}</li>
+          <li><strong>Fecha de publicación:</strong> {{ product.releaseDate | date }}</li>
+          <li><strong>Dimensiones:</strong> {{ product.dimensions }}</li>
+          <li><strong>Páginas:</strong> {{ product.pageCount }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Descripción larga -->
+  <div class="mt-5">
+    <h4>Descripción</h4>
     <p>{{ product.description }}</p>
-    <p><strong>Precio:</strong> {{ product.price | currency: 'EUR' }}</p>
-    <button class="btn btn-primary">Añadir al carrito</button>
+  </div>
 </div>
 
-  <div *ngIf="!product">
-    <p>Producto no encontrado.</p>
+<div class="container mt-5" *ngIf="!product">
+  <div class="alert alert-danger" role="alert">
+    Producto no encontrado.
+  </div>
 </div>
