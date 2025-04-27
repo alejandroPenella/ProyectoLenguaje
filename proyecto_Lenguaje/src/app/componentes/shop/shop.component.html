@@ -39,42 +39,33 @@
   </div>
 </div>
 
-<div class="container my-5">
-  <div class="row g-0 bg-dark text-white rounded-4 shadow-lg overflow-hidden" style="height: 500px ; width: 1400px; ">
-
-
-  <div class="col-md-4 d-flex flex-column justify-content-center p-4">
+<div class="container my-3">
+  <div class="row g-0 bg-dark text-white rounded-4 shadow-lg overflow-hidden" style="height: 500px; width: 1400px;">
+    <div class="col-md-4 d-flex flex-column justify-content-center align-items-center text-center p-4"> <!-- Added text-center -->
       <img src="\img\warhammer.png" alt="Warhammer 40,000" class="mb-3" style="width: 250px;" />
       <h2 class="text-warning">{{cards[0].title}}</h2>
       <p>
-      {{cards[0].description}}
+        {{cards[0].description}}
       </p>
-      <button [routerLink]="cards[0].buttonLink" class="btn btn-warning text-dark fw-bold rounded-pill px-2 py-1 mt-3 " style="font-size: 0.rem; width: 190px;">
-          {{ cards[0].buttonText }}
-      </button>
-  </div>
+    </div>
 
-  <div class="col-md-8" [ngStyle]="{'background-image': 'url(' + cards[0].imgUrl + ')', 'background-size': 'cover', 'background-position': 'center'}">
-  </div>
+    <div class="col-md-8" [ngStyle]="{'background-image': 'url(' + cards[0].imgUrl + ')', 'background-size': 'cover', 'background-position': 'center'}">
+    </div>
   </div>
 </div>
 
-<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-  <div class="col pt-20" *ngFor="let product of products" style="padding-top: 200px;">
-  <div class="card h-100 shadow-sm border-0">
-
-
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" style="margin-top: 10px;">
+  <div class="col pt-20" *ngFor="let product of products" style="padding-top: 30px;">
+    <div class="card h-100 shadow-sm border-0">
       <img [src]="product.imageUrl" class="card-img-top" [alt]="product.name" style="object-fit: contain; height: 300px;">
-
       <div class="card-body d-flex flex-column justify-content-between">
-      <h5 class="card-title">{{ product.name }}</h5>
-      <p class="card-text text-muted">{{ product.description }}</p>
-      <p class="fw-bold">{{ product.price | currency:'EUR' }}</p>
-
-      <button (click)="comprar(product.id)" class="btn btn-primary mt-auto w-100">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text text-muted">{{ product.description }}</p>
+        <p class="fw-bold">{{ product.price | currency:'EUR' }}</p>
+        <button (click)="comprar(product.id)" class="btn btn-primary mt-auto w-100">
           Comprar
-      </button>
+        </button>
       </div>
-  </div>
+    </div>
   </div>
 </div>

@@ -13,7 +13,8 @@
   text-align: center;
   font-size: 18px;
   font-weight: bold;
-  position: relative; /* Required for dropdown positioning */
+  position: relative;
+  padding: 20px 20px;
 }
 
 .section ul.dropdown {
@@ -21,7 +22,7 @@
   margin: 0;
   padding: 0;
   position: absolute;
-  top: 100%; /* Position the dropdown below the section */
+  top: 100%;
   left: 0;
   width: 100%;
   background-color: #444;
@@ -45,21 +46,25 @@
 }
 
 .chaos {
-  background: linear-gradient(to right, black, transparent); /* Fade effect from black to transparent */
+  background: linear-gradient(to right, black, transparent);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .imperium {
-  background: linear-gradient(to right, transparent, rgb(45, 45, 199), transparent); /* Fade effect from the center to both sides */
+  background: linear-gradient(to right, transparent, rgb(45, 45, 199), transparent);
 }
 
 .xenos {
-  background: linear-gradient(to left, green, transparent); /* Fade effect from green to transparent, right to left */
+  background: linear-gradient(to left, green, transparent);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
-
 
 .card img {
   transition: transform 0.3s ease;
 }
+
 .card:hover img {
   transform: scale(1.05);
 }

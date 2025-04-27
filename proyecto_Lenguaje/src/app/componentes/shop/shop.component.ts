@@ -76,10 +76,8 @@ export class ShopComponent {
   cards = [
     {
       title: 'MARINES ESPACIALES',
-      description:'Avanza implacable en defensa de la humanidad.',
-      imgUrl: '/img/81cf3b1e-e40b-42c8-a78d-c32f1025b932-profile_banner-480.png',
-      buttonText:'EXPLORA LA GAMA',
-      buttonLink:'/home',
+      description:'Marcha por Macragge con los nobles parangones de las enseñanzas de Guilliman.',
+      imgUrl: '/img/SpaceMarinesCover.jpg',
     },
     {
 
