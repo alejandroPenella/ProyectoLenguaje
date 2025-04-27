@@ -3,38 +3,78 @@
   <div class="section chaos" (mouseenter)="showDropdown('chaos')" (mouseleave)="hideDropdown()">
     CHAOS
     <ul class="dropdown" *ngIf="activeDropdown === 'chaos'">
-      <li><a href="#">Daemons del Chaos</a></li>
-      <li><a href="#">Caballeros del Chaos</a></li>
-      <li><a href="#">Marines Espaciales del Chaos</a></li>
-      <li><a href="#">Death Guard</a></li>
-      <li><a href="#">Emperors Children</a></li>
-      <li><a href="#">Thousand Sons</a></li>
-      <li><a href="#">World Eaters</a></li>
+      <li><a href="/shop">Daemons del Chaos</a></li>
+      <li><a href="/shop">Caballeros del Chaos</a></li>
+      <li><a href="/shop">Marines Espaciales del Chaos</a></li>
+      <li><a href="/shop">Death Guard</a></li>
+      <li><a href="/shop">Emperors Children</a></li>
+      <li><a href="/shop">Thousand Sons</a></li>
+      <li><a href="/shop">World Eaters</a></li>
     </ul>
   </div>
   <div class="section imperium" (mouseenter)="showDropdown('imperium')" (mouseleave)="hideDropdown()">
     IMPERIUM
     <ul class="dropdown" *ngIf="activeDropdown === 'imperium'">
-      <li><a href="#">Marines Espaciales</a></li>
-      <li><a href="#">Adepta Sororitas</a></li>
-      <li><a href="#">Adeptus Custodes</a></li>
-      <li><a href="#">Adeptus Mechanicus</a></li>
-      <li><a href="#">Astra Militarum</a></li>
-      <li><a href="#">Caballeros Imperiales</a></li>
-      <li><a href="#">Agentes Imperiales</a></li>
+      <li><a href="/shop">Marines Espaciales</a></li>
+      <li><a href="/shop">Adepta Sororitas</a></li>
+      <li><a href="/shop">Adeptus Custodes</a></li>
+      <li><a href="/shop">Adeptus Mechanicus</a></li>
+      <li><a href="/shop">Astra Militarum</a></li>
+      <li><a href="/shop">Caballeros Imperiales</a></li>
+      <li><a href="/shop">Agentes Imperiales</a></li>
     </ul>
   </div>
   <div class="section xenos" (mouseenter)="showDropdown('xenos')" (mouseleave)="hideDropdown()">
     XENOS
     <ul class="dropdown" *ngIf="activeDropdown === 'xenos'">
-      <li><a href="#">Aeldari</a></li>
-      <li><a href="#">Drukhari</a></li>
-      <li><a href="#">Cultos Genestealer</a></li>
-      <li><a href="#">Leagues of Votann</a></li>
-      <li><a href="#">Necrones</a></li>
-      <li><a href="#">Orkos</a></li>
-      <li><a href="#">Imperio Tau</a></li>
-      <li><a href="#">Tiránidos</a></li>
+      <li><a href="/shop">Aeldari</a></li>
+      <li><a href="/shop">Drukhari</a></li>
+      <li><a href="/shop">Cultos Genestealer</a></li>
+      <li><a href="/shop">Leagues of Votann</a></li>
+      <li><a href="/shop">Necrones</a></li>
+      <li><a href="/shop">Orkos</a></li>
+      <li><a href="/shop">Imperio Tau</a></li>
+      <li><a href="/shop">Tiránidos</a></li>
     </ul>
+  </div>
+</div>
+
+<div class="container my-5">
+  <div class="row g-0 bg-dark text-white rounded-4 shadow-lg overflow-hidden" style="height: 500px ; width: 1400px; ">
+
+
+  <div class="col-md-4 d-flex flex-column justify-content-center p-4">
+      <img src="\img\warhammer.png" alt="Warhammer 40,000" class="mb-3" style="width: 250px;" />
+      <h2 class="text-warning">{{cards[0].title}}</h2>
+      <p>
+      {{cards[0].description}}
+      </p>
+      <button [routerLink]="cards[0].buttonLink" class="btn btn-warning text-dark fw-bold rounded-pill px-2 py-1 mt-3 " style="font-size: 0.rem; width: 190px;">
+          {{ cards[0].buttonText }}
+      </button>
+  </div>
+
+  <div class="col-md-8" [ngStyle]="{'background-image': 'url(' + cards[0].imgUrl + ')', 'background-size': 'cover', 'background-position': 'center'}">
+  </div>
+  </div>
+</div>
+
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+  <div class="col pt-20" *ngFor="let product of products" style="padding-top: 200px;">
+  <div class="card h-100 shadow-sm border-0">
+
+
+      <img [src]="product.imageUrl" class="card-img-top" [alt]="product.name" style="object-fit: contain; height: 300px;">
+
+      <div class="card-body d-flex flex-column justify-content-between">
+      <h5 class="card-title">{{ product.name }}</h5>
+      <p class="card-text text-muted">{{ product.description }}</p>
+      <p class="fw-bold">{{ product.price | currency:'EUR' }}</p>
+
+      <button (click)="comprar(product.id)" class="btn btn-primary mt-auto w-100">
+          Comprar
+      </button>
+      </div>
+  </div>
   </div>
 </div>
