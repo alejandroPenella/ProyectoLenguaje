@@ -10,10 +10,11 @@ import { PatrolsComponent } from '../patrols/patrols.component';
 import { ShopPreviewComponent } from '../shop-preview/shop-preview.component';
 
 
+
 @Component({
   selector: 'app-home',
   imports: [RouterOutlet, FooterComponent, NavbarComponent,TopBarComponent,PromoBannerComponent,
-    ShopBannerComponent,CardFactionComponent,PatrolsComponent,ShopPreviewComponent],
+    ShopBannerComponent,CardFactionComponent,PatrolsComponent,ShopPreviewComponent,],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
