@@ -32,7 +32,7 @@ export class ShopComponent implements OnInit {
   selectedCategory: string | null = null;
   dropdownItems: any[] = [];
   filteredProducts: any[] = [];
-  filteredCards: any[] = []; // Added filteredCards property
+  filteredCards: any[] = [];
 
   dropdownData = {
     chaos: [
@@ -126,7 +126,7 @@ export class ShopComponent implements OnInit {
     {
       title: 'ADEPTA SORORITAS',
       description: 'Desata furia, fuego y fe contra los enemigos del Dios Emperador.',
-      imgUrl: '/img/SpaceMarinesCover.jpg',
+      imgUrl: '/img/SistersCoverArt.jpg',
       faction: 'Adepta Sororitas'
     }
   ];
@@ -134,9 +134,10 @@ export class ShopComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
-    // Initialize filteredProducts and filteredCards with all items
-    this.filteredProducts = this.products;
-    this.filteredCards = this.cards;
+    // Filter to 'Marines Espaciales' by default
+    const defaultFaction = 'Marines Espaciales';
+    this.filteredProducts = this.products.filter(product => product.faction === defaultFaction);
+    this.filteredCards = this.cards.filter(card => card.faction === defaultFaction);
 
     // Get the category from the URL
     const category = this.route.snapshot.paramMap.get('category') as keyof typeof this.dropdownData;
