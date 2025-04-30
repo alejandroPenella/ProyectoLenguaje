@@ -12,7 +12,6 @@ import { Router } from '@angular/router';
 import { ShopPreviewComponent } from "../shop-preview/shop-preview.component";
 import { ActivatedRoute } from '@angular/router';
 
-
 @Component({
   selector: 'app-shop',
   standalone: true,
@@ -32,6 +31,8 @@ export class ShopComponent implements OnInit {
   activeDropdown: string | null = null;
   selectedCategory: string | null = null;
   dropdownItems: any[] = [];
+  filteredProducts: any[] = [];
+  filteredCards: any[] = []; // Added filteredCards property
 
   dropdownData = {
     chaos: [
@@ -64,25 +65,6 @@ export class ShopComponent implements OnInit {
     ]
   };
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
-
-  ngOnInit(): void {
-    // Get the category from the URL
-    const category = this.route.snapshot.paramMap.get('category') as keyof typeof this.dropdownData;
-    if (category && this.dropdownData[category]) {
-      this.selectedCategory = category;
-      this.dropdownItems = this.dropdownData[category]; // Set the items for the selected category
-    }
-  }
-
-  showDropdown(section: string): void {
-    this.activeDropdown = section; 
-  }
-
-  hideDropdown(): void {
-    this.activeDropdown = null;
-  }
-
   products = [
     {
       id: 1,
@@ -110,44 +92,74 @@ export class ShopComponent implements OnInit {
     },
     {
       id: 6,
-      name: 'Patrulla de las adeptasSoritas',
+      name: 'Patrulla de las Adeptas Soritas',
       description: 'Las Hermana de Batalla componen la mayoría de todas las Órdenes Militantes de las Adepta Sororitas.',
       imageUrl: '/img/patrullaAdepta.jpg',
-      price: 125,
+      price: 130,
       faction: 'Adepta Sororitas'
     },
     {
       id: 7,
-      name: 'Sisters of Battle',
+      name: 'Sister Superior Amalia Novena',
       description: 'Cada Battle Sister es una huérfana criada desde el nacimiento por la Schola Progenium.',
       imageUrl: '/img/adeptaSoritas.jpg',
-      price: 125,
+      price: 31.50,
       faction: 'Adepta Sororitas'
     },
     {
       id: 8,
-      name: 'tribunal',
+      name: 'The Triumph of Saint Katherine',
       description: 'Dondequiera que marche el Triumph of Saint Katherine brilla el resplandor del Emperador.',
       imageUrl: '/img/tribunal.jpg',
-      price: 125,
+      price: 93,
       faction: 'Adepta Sororitas'
     }
   ];
 
-  comprar(productId: number) {
-
-    this.router.navigate(['/product', productId]);
-  }
-
-
   cards = [
     {
       title: 'MARINES ESPACIALES',
-      description:'Marcha por Macragge con los nobles parangones de las enseñanzas de Guilliman.',
+      description: 'Marcha por Macragge con los nobles parangones de las enseñanzas de Guilliman.',
       imgUrl: '/img/SpaceMarinesCover.jpg',
+      faction: 'Marines Espaciales'
     },
     {
-
+      title: 'ADEPTA SORORITAS',
+      description: 'Desata furia, fuego y fe contra los enemigos del Dios Emperador.',
+      imgUrl: '/img/SpaceMarinesCover.jpg',
+      faction: 'Adepta Sororitas'
     }
-  ]
+  ];
+
+  constructor(private route: ActivatedRoute, private router: Router) {}
+
+  ngOnInit(): void {
+    // Initialize filteredProducts and filteredCards with all items
+    this.filteredProducts = this.products;
+    this.filteredCards = this.cards;
+
+    // Get the category from the URL
+    const category = this.route.snapshot.paramMap.get('category') as keyof typeof this.dropdownData;
+    if (category && this.dropdownData[category]) {
+      this.selectedCategory = category;
+      this.dropdownItems = this.dropdownData[category]; // Set the items for the selected category
+    }
+  }
+
+  showDropdown(section: string): void {
+    this.activeDropdown = section;
+  }
+
+  hideDropdown(): void {
+    this.activeDropdown = null;
+  }
+
+  filterByFaction(faction: string): void {
+    this.filteredProducts = this.products.filter(product => product.faction === faction);
+    this.filteredCards = this.cards.filter(card => card.faction === faction); // Filter cards by faction
+  }
+
+  comprar(productId: number): void {
+    this.router.navigate(['/product', productId]);
+  }
 }
