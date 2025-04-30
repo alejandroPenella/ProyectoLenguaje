@@ -76,11 +76,11 @@ export class ShopComponent implements OnInit {
   }
 
   showDropdown(section: string): void {
-    this.activeDropdown = section; // Set the active dropdown to the hovered section
+    this.activeDropdown = section; 
   }
 
   hideDropdown(): void {
-    this.activeDropdown = null; // Reset the active dropdown when the mouse leaves
+    this.activeDropdown = null;
   }
 
   products = [
@@ -89,21 +89,48 @@ export class ShopComponent implements OnInit {
       name: 'Patrulla Space Marines',
       description: 'Fuerza de ataque básica lista para jugar.',
       imageUrl: '/img/patrullaMarine.jpg',
-      price: 120
+      price: 120,
+      faction: 'Marines Espaciales'
     },
     {
       id: 4,
       name: 'Roboute Guilliman',
       description: 'Primarca de los Ultramarines.',
       imageUrl: '/img/RobouteGuilliman.jpg',
-      price: 55
+      price: 55,
+      faction: 'Marines Espaciales'
     },
     {
       id: 5,
       name: 'Guardia de Honor de los Ultramarines',
       description: 'Contiene tres opciones de Élites para tu ejército de Marines Espaciales.',
       imageUrl: '/img/UltramarineHonorGuard.jpg',
-      price: 125
+      price: 125,
+      faction: 'Marines Espaciales'
+    },
+    {
+      id: 6,
+      name: 'Patrulla de las adeptasSoritas',
+      description: 'Las Hermana de Batalla componen la mayoría de todas las Órdenes Militantes de las Adepta Sororitas.',
+      imageUrl: '/img/patrullaAdepta.jpg',
+      price: 125,
+      faction: 'Adepta Sororitas'
+    },
+    {
+      id: 7,
+      name: 'Sisters of Battle',
+      description: 'Cada Battle Sister es una huérfana criada desde el nacimiento por la Schola Progenium.',
+      imageUrl: '/img/adeptaSoritas.jpg',
+      price: 125,
+      faction: 'Adepta Sororitas'
+    },
+    {
+      id: 8,
+      name: 'tribunal',
+      description: 'Dondequiera que marche el Triumph of Saint Katherine brilla el resplandor del Emperador.',
+      imageUrl: '/img/tribunal.jpg',
+      price: 125,
+      faction: 'Adepta Sororitas'
     }
   ];
 

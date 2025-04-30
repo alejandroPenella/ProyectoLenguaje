@@ -1,17 +1,22 @@
 <div class="top-bar bg-black p-2 d-flex justify-content-between align-items-center">
     <div class="top-bar-links d-flex gap-3">
-        <button class="lang-btn bg-transparent border-0">
-        <img src="\img\home.png" alt="Home" class="w-6 h-4" routerLink="/home" style="width: 20px;"/>
+        <button class="lang-btn bg-transparent border-0" routerLink="/home">
+            <img src="/img/home.png" alt="Home" style="width: 20px;" />
         </button>
+        
         <a class="text-decoration-none hover-gold" routerLink ="/community">Warhammer Community</a>
     </div>
 
     <div class="top-bar-right d-flex align-items-center gap-3">
         <a class="text-decoration-none hover-gold" routerLink ="/contact">Contacta con nosotros</a>
         <a class="text-decoration-none hover-gold" routerLink ="/join">Iniciar sesion</a>
-        <button class="lang-btn bg-transparent border-0">
-            <img src="assets/icons/flag-es.svg" alt="Español" class="w-6 h-4" />
-        </button>
+        <a class="position-relative text-decoration-none text-dark" routerLink="/cart">
+            <i class="bi bi-cart3 fs-4"></i>
+            <span *ngIf="totalItems > 0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            {{ totalItems }}
+            <span class="visually-hidden">productos en el carrito</span>
+            </span>
+        </a>
     </div>
 </div>
 

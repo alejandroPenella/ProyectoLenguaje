@@ -3,15 +3,16 @@ import { ActivatedRoute } from '@angular/router';  // Importa ActivatedRoute par
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { TopBarComponent } from '../top-bar/top-bar.component';
+import { CartService } from '../../servicios/cart.service';
 
 
 @Component({
   selector: 'app-product',
   imports: [RouterLink, RouterLinkActive, RouterOutlet, CommonModule, TopBarComponent],
   templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css']  // Corrección en styleUrls
+  styleUrls: ['./product.component.css']  
 })
-export class ProductComponent implements OnInit {  // El método ngOnInit debe estar dentro de la clase
+export class ProductComponent implements OnInit {  
 
   productId: number | null = null;
   product: any = {};
@@ -51,17 +52,43 @@ export class ProductComponent implements OnInit {  // El método ngOnInit debe e
       description: 'Contiene tres opciones de Élites para tu ejército de Marines Espaciales.',
       imageUrl: '/img/UltramarineHonorGuard.jpg',
       price: 125
+    },
+    {
+      id: 6,
+      name: 'Patrulla de las adeptasSoritas',
+      description: 'Las Hermana de Batalla componen la mayoría de todas las Órdenes Militantes de las Adepta Sororitas.',
+      imageUrl: '/img/patrullaAdepta.jpg',
+      price: 125,
+      faction: 'Adepta Sororitas'
+    },
+    {
+      id: 7,
+      name: 'Sisters of Battle',
+      description: 'Cada Battle Sister es una huérfana criada desde el nacimiento por la Schola Progenium.',
+      imageUrl: '/img/adeptaSoritas.jpg',
+      price: 125,
+      faction: 'Adepta Sororitas'
+    },
+    {
+      id: 8,
+      name: 'tribunal',
+      description: 'Dondequiera que marche el Triumph of Saint Katherine brilla el resplandor del Emperador.',
+      imageUrl: '/img/tribunal.jpg',
+      price: 125,
+      faction: 'Adepta Sororitas'
     }
   ];
 
-  constructor(private route: ActivatedRoute) {}  // Inyectamos ActivatedRoute
+  constructor(private route: ActivatedRoute,private cartService: CartService) {}  
 
-  ngOnInit(): void {  // Este método debe estar aquí dentro de la clase
-    // Obtener el id del producto desde la URL
+  addToCart(product: any) {
+    this.cartService.addToCart(product);
+  }
+
+  ngOnInit(): void {  
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       this.productId = Number(id);
-      // Buscar el producto por id
       this.product = this.products.find(p => p.id === this.productId);
     }
   }
